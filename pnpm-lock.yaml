@@ -10,13 +10,13 @@ importers:
     dependencies:
       '@langchain/anthropic':
         specifier: ^0.3.6
-        version: 0.3.6(@langchain/core@0.3.15)
+        version: 0.3.6(@langchain/core@0.3.15(openai@4.68.4(zod@3.23.8)))
       '@langchain/core':
         specifier: ^0.3.15
-        version: 0.3.15
+        version: 0.3.15(openai@4.68.4(zod@3.23.8))
       '@langchain/langgraph':
         specifier: ^0.2.18
-        version: 0.2.18(@langchain/core@0.3.15)
+        version: 0.2.18(@langchain/core@0.3.15(openai@4.68.4(zod@3.23.8)))
       uuid:
         specifier: ^11.0.1
         version: 11.0.1
@@ -165,6 +165,15 @@ packages:
       encoding:
         optional: true
 
+  openai@4.68.4:
+    resolution: {integrity: sha512-LRinV8iU9VQplkr25oZlyrsYGPGasIwYN8KFMAAFTHHLHjHhejtJ5BALuLFrkGzY4wfbKhOhuT+7lcHZ+F3iEA==}
+    hasBin: true
+    peerDependencies:
+      zod: ^3.23.8
+    peerDependenciesMeta:
+      zod:
+        optional: true
+
   p-finally@1.0.0:
     resolution: {integrity: sha512-LICb2p9CB7FS+0eR1oqWnHhp0FljGLZCWBE9aix0Uye9W8LTQPwMTYVGWQWIw9RdQiDg4+epXQODwIYJtSJaow==}
     engines: {node: '>=4'}
@@ -239,23 +248,23 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@langchain/anthropic@0.3.6(@langchain/core@0.3.15)':
+  '@langchain/anthropic@0.3.6(@langchain/core@0.3.15(openai@4.68.4(zod@3.23.8)))':
     dependencies:
       '@anthropic-ai/sdk': 0.27.3
-      '@langchain/core': 0.3.15
+      '@langchain/core': 0.3.15(openai@4.68.4(zod@3.23.8))
       fast-xml-parser: 4.5.0
       zod: 3.23.8
       zod-to-json-schema: 3.23.5(zod@3.23.8)
     transitivePeerDependencies:
       - encoding
 
-  '@langchain/core@0.3.15':
+  '@langchain/core@0.3.15(openai@4.68.4(zod@3.23.8))':
     dependencies:
       ansi-styles: 5.2.0
       camelcase: 6.3.0
       decamelize: 1.2.0
       js-tiktoken: 1.0.15
-      langsmith: 0.2.2
+      langsmith: 0.2.2(openai@4.68.4(zod@3.23.8))
       mustache: 4.2.0
       p-queue: 6.6.2
       p-retry: 4.6.2
@@ -265,15 +274,15 @@ snapshots:
     transitivePeerDependencies:
       - openai
 
-  '@langchain/langgraph-checkpoint@0.0.11(@langchain/core@0.3.15)':
+  '@langchain/langgraph-checkpoint@0.0.11(@langchain/core@0.3.15(openai@4.68.4(zod@3.23.8)))':
     dependencies:
-      '@langchain/core': 0.3.15
+      '@langchain/core': 0.3.15(openai@4.68.4(zod@3.23.8))
       uuid: 10.0.0
 
-  '@langchain/langgraph@0.2.18(@langchain/core@0.3.15)':
+  '@langchain/langgraph@0.2.18(@langchain/core@0.3.15(openai@4.68.4(zod@3.23.8)))':
     dependencies:
-      '@langchain/core': 0.3.15
-      '@langchain/langgraph-checkpoint': 0.0.11(@langchain/core@0.3.15)
+      '@langchain/core': 0.3.15(openai@4.68.4(zod@3.23.8))
+      '@langchain/langgraph-checkpoint': 0.0.11(@langchain/core@0.3.15(openai@4.68.4(zod@3.23.8)))
       double-ended-queue: 2.1.0-0
       uuid: 10.0.0
       zod: 3.23.8
@@ -348,7 +357,7 @@ snapshots:
     dependencies:
       base64-js: 1.5.1
 
-  langsmith@0.2.2:
+  langsmith@0.2.2(openai@4.68.4(zod@3.23.8)):
     dependencies:
       '@types/uuid': 10.0.0
       commander: 10.0.1
@@ -356,6 +365,8 @@ snapshots:
       p-retry: 4.6.2
       semver: 7.6.3
       uuid: 10.0.0
+    optionalDependencies:
+      openai: 4.68.4(zod@3.23.8)
 
   mime-db@1.52.0: {}
 
@@ -372,6 +383,21 @@ snapshots:
   node-fetch@2.7.0:
     dependencies:
       whatwg-url: 5.0.0
+
+  openai@4.68.4(zod@3.23.8):
+    dependencies:
+      '@types/node': 18.19.59
+      '@types/node-fetch': 2.6.11
+      abort-controller: 3.0.0
+      agentkeepalive: 4.5.0
+      form-data-encoder: 1.7.2
+      formdata-node: 4.4.1
+      node-fetch: 2.7.0
+    optionalDependencies:
+      zod: 3.23.8
+    transitivePeerDependencies:
+      - encoding
+    optional: true
 
   p-finally@1.0.0: {}
 
